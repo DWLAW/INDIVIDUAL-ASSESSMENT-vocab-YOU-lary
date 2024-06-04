@@ -1,0 +1,51 @@
+{
+  "vocab1": {
+    "vocab_id" : "1",
+    "firebaseKey": "",
+    "title" : "犬",
+    "definition" : "いぬ",
+    "category" : "noun",
+    "uid": ""
+  },
+  "vocab2": {
+    "vocab_id" : "2",
+    "firebaseKey": "",
+    "title" : "上げる",
+    "definition" : "あげる",
+    "category" : "verb",
+    "uid": ""
+  },
+  "vocab3": {
+    "vocab_id" : "3",
+    "firebaseKey": "",
+    "title" : "赤い",
+    "definition" : "あかい",
+    "category" : "adjective",
+    "uid": ""
+  },
+  "vocab4": {
+    "vocab_id" : "4",
+    "firebaseKey": "",
+    "title" : "山",
+    "definition" : "やま",
+    "category" : "noun",
+    "uid": ""
+  },
+  "vocab5": {
+    "vocab_id" : "5",
+    "firebaseKey": "",
+    "title" : "四月",
+    "definition" : "しがつ",
+    "category" : "noun",
+    "uid": ""
+  },
+  "vocab6": {
+    "vocab_id" : "6",
+    "firebaseKey": "",
+    "title" : "早く",
+    "definition" : "はやく",
+    "category" : "adverb",
+    "uid": ""
+  }
+  
+}
