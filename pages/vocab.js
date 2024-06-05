@@ -21,7 +21,7 @@ const showVocab = (array) => {
       <h6 class="card-subtitle mb-2 text-muted">${item.definition}</h6>
       
       <p class="card-text bold">${item.category}</p>
-      <i class="fas fa-edit btn btn-info" id="update-vocab--${item.firebaseKey}"></i>
+      <i class="fas fa-edit btn btn-info" id="edit-vocab-btn--${item.firebaseKey}"></i>
       <i class="btn btn-danger fas fa-trash-alt" id="delete-vocab-btn--${item.firebaseKey}"></i>
     </div>
   </div>

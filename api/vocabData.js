@@ -39,6 +39,18 @@ const createVocab = (payload) => new Promise((resolve, reject) => {
     .then((data) => resolve(data))
     .catch(reject);
 });
+//  GET SINGLE Vocab
+const getSingleVocab = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab/${firebaseKey}.json`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    }, // you technically do not need the options object for GET requests, but using it here for consistency
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(data)) // will resolve a single object
+    .catch(reject);
+});
 
 //  UPDATE VOCAB
 const updateVocab = (payload) => new Promise((resolve, reject) => {
@@ -53,9 +65,58 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
     .then(resolve)
     .catch(reject);
 });
+const filterVerb = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="verb"&equalTo=true`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+const filterNoun = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="noun"&equalTo=true`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+const filterAdverb = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="adverb"&equalTo=true`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
+const filterAdj = () => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="adjective"&equalTo=true`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => resolve(Object.values(data)))
+    .catch(reject);
+});
 export {
   getVocab,
   createVocab,
   deleteVocab,
   updateVocab,
+  getSingleVocab,
+  filterAdj,
+  filterNoun,
+  filterVerb,
+  filterAdverb,
 };
