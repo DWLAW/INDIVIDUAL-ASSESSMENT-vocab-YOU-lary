@@ -4,15 +4,15 @@ import renderToDOM from '../utils/renderToDom';
 const selectCategory = (vocabId) => {
   let domString = `<label for="vocab">Select a category</label>
     <select class="form-control" id="vocab_id" required>
-    <option value="">Select an vocab</option>`;
+    <option value="">Select a category</option>`;
 
   getVocab().then((vocabsArray) => {
-    vocabsArray.forEach((vocab) => {
+    vocabsArray.forEach((category) => {
       domString += `
           <option 
-            value="${vocab.firebaseKey}" 
-            ${vocabId === vocab.firebaseKey ? 'selected' : ''}>
-              ${vocab.category}
+            value="${category.firebaseKey}" 
+            ${vocabId === category.firebaseKey ? 'selected' : ''}>
+              ${category.category}
           </option>`;
     });
 

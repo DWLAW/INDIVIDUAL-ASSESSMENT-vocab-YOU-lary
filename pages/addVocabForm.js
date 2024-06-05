@@ -1,6 +1,5 @@
 import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDom';
-import selectCategory from './selectCategory';
 
 const addVocabForm = (obj = {}) => {
   clearDom();
@@ -14,14 +13,20 @@ const addVocabForm = (obj = {}) => {
         <label for="image">definition</label>
         <input type="text" class="form-control" id="definition" placeholder="definition"value="${obj.definition || ''}" required>
       </div>
-        </div>
-        <div class="form-group" id="select-category">
-        </div>
+      <div class="form-group">
+        <label for="category">category</label>
+        <select id="category" class="form-control">
+          <option selected>Choose...</option>
+          <option>noun</option>
+          <option>verb</option>
+          <option>adverb</option>
+          <option>adjective</option>
+        </select>
+    </div>
 
       <button type="submit" class="btn btn-primary mt-3">Submit Vocab</button>
     </form>`;
 
   renderToDOM('#form-container', domString);
-  selectCategory(`${obj.category || ''}`);
 };
 export default addVocabForm;

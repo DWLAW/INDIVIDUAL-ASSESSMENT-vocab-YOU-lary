@@ -4,12 +4,11 @@ import { showVocab } from '../pages/vocab';
 const formEvents = () => {
   document.querySelector('#main-container').addEventListener('submit', (e) => {
     e.preventDefault();
-    if (e.target.id.includes('submit-vocab')) {
+    if (e.target.id.includes('submit')) {
       const payload = {
-        email: document.querySelector('#email').value,
-        first_name: document.querySelector('#first_name').value,
-        last_name: document.querySelector('#last_name').value,
-        favorite: document.querySelector('#favorite').checked,
+        title: document.querySelector('#title').value,
+        definition: document.querySelector('#definition').value,
+        category: document.querySelector('#category').value,
       };
       createVocab(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
