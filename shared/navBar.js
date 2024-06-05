@@ -8,9 +8,9 @@ const navBar = () => {
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        
         <span class="navbar-text">
-        <div id="add-button"></div>
-        <div id="logout-button"></div>
+          <div id="logout-button"></div>
         </span>
         </div>
         </div>
