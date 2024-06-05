@@ -18,6 +18,20 @@ const formEvents = () => {
         });
       });
     }
+    //  CLICK EVENT FOR EDITING A Vocab
+    if (e.target.id.includes('update-vocab')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const payload = {
+        title: document.querySelector('#title').value,
+        definition: document.querySelector('#definition').value,
+        category: document.querySelector('#category').value,
+        firebaseKey,
+      };
+
+      updateVocab(payload).then(() => {
+        getVocab().then(showVocab);
+      });
+    }
   });
 };
 export default formEvents;
