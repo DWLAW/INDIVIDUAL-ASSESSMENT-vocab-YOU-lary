@@ -71,48 +71,60 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
     .then(resolve)
     .catch(reject);
 });
-const filterVerb = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="category"&equalTo="verb"`, {
+const filterVerb = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      const cardCategory = Object.values(data).filter((item) => item.category === 'verb');
+      resolve(cardCategory);
+    })
     .catch(reject);
 });
-const filterNoun = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="category"&equalTo="noun"`, {
+const filterNoun = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      const cardCategory = Object.values(data).filter((item) => item.category === 'noun');
+      resolve(cardCategory);
+    })
     .catch(reject);
 });
-const filterAdverb = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="category"&equalTo="adverb"`, {
+const filterAdverb = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      const cardCategory = Object.values(data).filter((item) => item.category === 'adverb');
+      resolve(cardCategory);
+    })
     .catch(reject);
 });
-const filterAdj = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="category"&equalTo="adjective"`, {
+const filterAdj = (uid) => new Promise((resolve, reject) => {
+  fetch(`${endpoint}/vocab.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
   })
     .then((response) => response.json())
-    .then((data) => resolve(Object.values(data)))
+    .then((data) => {
+      const cardCategory = Object.values(data).filter((item) => item.category === 'adjective');
+      resolve(cardCategory);
+    })
     .catch(reject);
 });
 export {
