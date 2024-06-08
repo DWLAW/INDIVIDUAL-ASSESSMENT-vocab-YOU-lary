@@ -66,7 +66,7 @@ const updateVocab = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 const filterVerb = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="verb"&equalTo=true`, {
+  fetch(`${endpoint}/vocab.json?orderBy="category"&equalTo="verb"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ const filterVerb = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 const filterNoun = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="noun"&equalTo=true`, {
+  fetch(`${endpoint}/vocab.json?orderBy="category"&equalTo="noun"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -88,7 +88,7 @@ const filterNoun = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 const filterAdverb = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="adverb"&equalTo=true`, {
+  fetch(`${endpoint}/vocab.json?orderBy="category"&equalTo="adverb"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ const filterAdverb = () => new Promise((resolve, reject) => {
     .catch(reject);
 });
 const filterAdj = () => new Promise((resolve, reject) => {
-  fetch(`${endpoint}/vocab.json?orderBy="adjective"&equalTo=true`, {
+  fetch(`${endpoint}/vocab.json?orderBy="category"&equalTo="adjective"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',

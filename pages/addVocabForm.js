@@ -4,7 +4,7 @@ import renderToDOM from '../utils/renderToDom';
 const addVocabForm = (obj = {}) => {
   clearDom();
   const domString = `
-    <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-Vocab'} class="mb-4">
+    <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-Vocab'}" class="mb-4">
       <div class="form-group">
         <label for="image">Title</label>
         <input type="text" class="form-control" id="title" placeholder="Title" value="${obj.title || ''}" required>
