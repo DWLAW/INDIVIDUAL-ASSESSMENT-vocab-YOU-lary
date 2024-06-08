@@ -14,6 +14,10 @@ const addVocabForm = (obj = {}) => {
         <input type="text" class="form-control" id="definition" placeholder="definition"value="${obj.definition || ''}" required>
       </div>
       <div class="form-group">
+        <label for="image">hiragana</label>
+        <input type="text" class="form-control" id="hiragana" placeholder="hiragana"value="${obj.hiragana || ''}" required>
+      </div>
+      <div class="form-group">
         <label for="category">category</label>
         <select id="category" class="form-control">
           <option selected>Choose...</option>
