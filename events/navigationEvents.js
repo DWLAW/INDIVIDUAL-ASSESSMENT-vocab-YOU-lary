@@ -3,9 +3,9 @@ import {
 } from '../api/vocabData';
 import { showVocab } from '../pages/vocab';
 
-const navigationEvents = () => {
+const navigationEvents = (user) => {
   document.querySelector('#all-vocab').addEventListener('click', () => {
-    getVocab().then(showVocab);
+    getVocab(user.uid).then(showVocab);
   });
   document.querySelector('#nouns').addEventListener('click', () => {
     filterNoun().then(showVocab);

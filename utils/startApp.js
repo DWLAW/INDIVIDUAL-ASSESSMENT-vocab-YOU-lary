@@ -12,7 +12,7 @@ const startApp = (user) => {
   domEvents(user);
   formEvents(user);
   navBar();
-  navigationEvents();
+  navigationEvents(user);
   logoutButton();
 
   // puts vocab on the DOM
