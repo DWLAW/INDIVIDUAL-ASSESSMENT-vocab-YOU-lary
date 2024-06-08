@@ -8,16 +8,16 @@ const navigationEvents = (user) => {
     getVocab(user.uid).then(showVocab);
   });
   document.querySelector('#nouns').addEventListener('click', () => {
-    filterNoun().then(showVocab);
+    filterNoun(user.uid).then(showVocab);
   });
   document.querySelector('#verbs').addEventListener('click', () => {
-    filterVerb().then(showVocab);
+    filterVerb(user.uid).then(showVocab);
   });
   document.querySelector('#adjectives').addEventListener('click', () => {
-    filterAdj().then(showVocab);
+    filterAdj(user.uid).then(showVocab);
   });
   document.querySelector('#adverbs').addEventListener('click', () => {
-    filterAdverb().then(showVocab);
+    filterAdverb(user.uid).then(showVocab);
   });
 };
 export default navigationEvents;
