@@ -2,7 +2,7 @@ import { deleteVocab, getSingleVocab, getVocab } from '../api/vocabData';
 import addVocabForm from '../pages/addVocabForm';
 import { showVocab } from '../pages/vocab';
 
-const domEvents = () => {
+const domEvents = (user) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     //  CLICK EVENT FOR DELETING A vocab
     if (e.target.id.includes('delete-vocab')) {
@@ -12,7 +12,7 @@ const domEvents = () => {
         const [, firebaseKey] = e.target.id.split('--');
 
         deleteVocab(firebaseKey).then(() => {
-          getVocab().then(showVocab);
+          getVocab(user).then(showVocab);
         });
       }
     }
@@ -23,7 +23,8 @@ const domEvents = () => {
     // CLICK EVENT EDITING/UPDATING A VOCAB WORD
     if (e.target.id.includes('edit-vocab-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleVocab(firebaseKey).then((vocabObj) => addVocabForm(vocabObj));
+      getSingleVocab(firebaseKey).then((vocabObj) => addVocabForm(user, vocabObj));
+      getSingleVocab(firebaseKey).then(addVocabForm(user));
     }
   });
 };
