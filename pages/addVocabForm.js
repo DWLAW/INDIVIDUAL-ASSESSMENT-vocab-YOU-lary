@@ -6,8 +6,8 @@ const addVocabForm = (obj = {}) => {
   const domString = `
     <form id="${obj.firebaseKey ? `update-vocab--${obj.firebaseKey}` : 'submit-Vocab'}" class="mb-4">
       <div class="form-group">
-        <label for="image">Title</label>
-        <input type="text" class="form-control" id="title" placeholder="Title" value="${obj.title || ''}" required>
+        <label for="image">Kanji</label>
+        <input type="text" class="form-control" id="title" placeholder="漢字" value="${obj.title || ''}" required>
       </div>
       <div class="form-group">
         <label for="image">definition</label>
@@ -15,7 +15,7 @@ const addVocabForm = (obj = {}) => {
       </div>
       <div class="form-group">
         <label for="image">hiragana</label>
-        <input type="text" class="form-control" id="hiragana" placeholder="hiragana"value="${obj.hiragana || ''}" required>
+        <input type="text" class="form-control" id="hiragana" placeholder="ひらがな"value="${obj.hiragana || ''}" required>
       </div>
       <div class="form-group">
         <label for="category">category</label>
