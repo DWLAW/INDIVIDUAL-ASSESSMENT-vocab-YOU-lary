@@ -23,8 +23,7 @@ const domEvents = (user) => {
     // CLICK EVENT EDITING/UPDATING A VOCAB WORD
     if (e.target.id.includes('edit-vocab-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleVocab(firebaseKey).then((vocabObj) => addVocabForm(user, vocabObj));
-      getSingleVocab(firebaseKey).then(addVocabForm(user));
+      getSingleVocab(firebaseKey).then((vocabObj) => addVocabForm(vocabObj));
     }
   });
 };
