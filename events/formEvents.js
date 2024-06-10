@@ -18,7 +18,7 @@ const formEvents = (user) => {
         const patchPayload = { firebaseKey: name };
 
         updateVocab(patchPayload).then(() => {
-          getVocab(user).then(showVocab);
+          getVocab(user.uid).then((vocab) => showVocab(vocab));
         });
       });
     }
@@ -34,7 +34,7 @@ const formEvents = (user) => {
       };
 
       updateVocab(payload).then(() => {
-        getVocab(user).then(showVocab);
+        getVocab(user.uid).then((vocab) => showVocab(vocab));
       });
     }
   });
